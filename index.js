@@ -37,6 +37,13 @@ module.exports = expressValidator({
     isNonEmptyArray: function(value) {
       return (Array.isArray(value)) && (value.length > 0);
     },
+    isFnTrue: function(param, fn) {
+      try {
+        return fn(param) === true;
+      } catch (e) {
+        return false;
+      }
+    },
     isAsyncFnTrue: function(param, fn) {
       return _promiseBoolTrue(function() {
         return fn(param);

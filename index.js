@@ -45,8 +45,8 @@ module.exports = expressValidator({
       }
     },
     isAsyncFnTrue: function(param, fn) {
-      return _promiseBoolTrue(function() {
-        return fn(param);
+      return _promiseBoolTrue(async function() {
+        return (await fn(param)) === true;
       });
     },
     isValidNumber: function(param) {

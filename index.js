@@ -49,7 +49,7 @@ module.exports = expressValidator({
         return (await fn(param)) === true;
       });
     },
-    isValidNumber: function(param) {
+    isValidInteger: function(param) {
       return typeof(param) == "number";
     },
     isValidUrl: function(param) {

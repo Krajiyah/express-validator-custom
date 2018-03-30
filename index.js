@@ -50,8 +50,7 @@ module.exports = expressValidator({
       });
     },
     isValidNumber: function(param) {
-      var num = +param;
-      return !isNaN(num);
+      return typeof(param) == "number";
     },
     isValidUrl: function(param) {
       return isUrl(param);
